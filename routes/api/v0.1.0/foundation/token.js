@@ -9,9 +9,7 @@ module.exports = function(router){
 	// 	https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
 	//
 	//
-	function token(req, res, next) {
-		console.log('token' + req.query['grant_type']);
-		
+	function token(req, res, next) {		
 		req.assert('grant_type', 'Invalid grant_type required').notEmpty();
 		req.assert('appid', 'Invalid appid required').notEmpty();
 		req.assert('secret', 'Invalid secret required').notEmpty();
