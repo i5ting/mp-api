@@ -10,7 +10,9 @@ describe('GET /api/token', function(){
       .get('/api/token?grant_type=client_credential&appid=APPID&secret=APPSECRET')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect(200,{"access_token":"ACCESS_TOKEN","expires_in":7200}, done);
+      .expect(200,{"access_token":"ACCESS_TOKEN","expires_in":7200},  function(err) {
+        done(err);
+      });
   })
 	
   it('respond with error', function(done){
@@ -21,7 +23,9 @@ describe('GET /api/token', function(){
       .expect(200,{
 				"errcode":40014,
 				"errmsg":"invalid grant_type"
-			}, done);
+			}, function(err) {
+        done(err);
+      });
   })
 	
   it('respond with error2', function(done){
@@ -32,7 +36,9 @@ describe('GET /api/token', function(){
       .expect(200,{
 				"errcode":40013,
 				"errmsg":"invalid appid"
-			}, done);
+			},  function(err) {
+        done(err);
+      });
   })
 	
 })
