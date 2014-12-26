@@ -7,7 +7,10 @@ router.get('/', function(req, res) {
 });
 
 
-
 require("./foundation/token")(router);
+
+require("./foundation/upload")(router);
+
+require("./foundation/download")(router);
 
 module.exports = router;

@@ -23,6 +23,23 @@ see http://mp.weixin.qq.com/wiki/11/0e4b294685f817b95cbed85ba5e82b8f.html
 https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
 
 
+### 上传多媒体文件
+
+http请求方式: POST/FORM
+
+http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&type=TYPE
+
+
+- access_token	是必须	调用接口凭证
+- type	是必须	媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb）
+- media	是必须	form-data中媒体文件标识，有filename、filelength、content-type等信息
+
+?access_token=wx50b97d02c86f6c26&type=image
+
+### 下载多媒体文件
+
+
+
 
 
 ## 参考
